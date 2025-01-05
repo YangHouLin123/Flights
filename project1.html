@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>航班价格查询</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>航班价格查询</h1>
+        <p>输入航班起点、终点和日期，查看历史价格波动</p>
+      </header>
+      <div class="content">
+        <!-- 查询表单 -->
+        <div class="card form-card">
+          <h2>查询航班价格</h2>
+          <form id="search-form">
+            <div class="input-group">
+              <label for="departure">起点</label>
+              <input
+                list="cities"
+                type="text"
+                id="departure"
+                name="departure"
+                placeholder="请输入起点城市"
+                value
+                required
+              />
+              <datalist id="cities">
+                <option value="北京">
+                <option value="天津">
+                <option value="上海">
+                <option value="重庆">
+                <option value="石家庄">
+                <option value="太原">
+                <option value="西安">
+                <option value="济南">
+                <option value="郑州">
+                <option value="沈阳">
+                <option value="长春">
+                <option value="哈尔滨">
+                <option value="南京">
+                <option value="杭州">
+                <option value="合肥">
+                <option value="南昌">
+                <option value="福州">
+                <option value="武汉">
+                <option value="长沙">
+                <option value="成都">
+                <option value="贵阳">
+                <option value="昆明">
+                <option value="广州">
+                <option value="海口">
+                <option value="兰州">
+                <option value="西宁">
+                <option value="台北">
+                <option value="呼和浩特">
+                <option value="乌鲁木齐">
+                <option value="拉萨">
+                <option value="南宁">
+                <option value="银川">
+                <option value="香港">
+                <option value="澳门">
+              </datalist>
+            </div>
+            <div class="input-group">
+              <label for="destination">终点</label>
+              <input
+                list="cities"
+                type="text"
+                id="destination"
+                name="destination"
+                placeholder="请输入终点城市"
+                value
+                required
+              />
+              <datalist id="cities">
+                <option value="北京">
+                <option value="天津">
+                <option value="上海">
+                <option value="重庆">
+                <option value="石家庄">
+                <option value="太原">
+                <option value="西安">
+                <option value="济南">
+                <option value="郑州">
+                <option value="沈阳">
+                <option value="长春">
+                <option value="哈尔滨">
+                <option value="南京">
+                <option value="杭州">
+                <option value="合肥">
+                <option value="南昌">
+                <option value="福州">
+                <option value="武汉">
+                <option value="长沙">
+                <option value="成都">
+                <option value="贵阳">
+                <option value="昆明">
+                <option value="广州">
+                <option value="海口">
+                <option value="兰州">
+                <option value="西宁">
+                <option value="台北">
+                <option value="呼和浩特">
+                <option value="乌鲁木齐">
+                <option value="拉萨">
+                <option value="南宁">
+                <option value="银川">
+                <option value="香港">
+                <option value="澳门">
+              </datalist>
+            </div>
+            <div class="input-group">
+              <label for="date">日期</label>
+              <input type="date" id="date" name="date" />
+            </div>
+            <button type="button" id="search-btn">查询</button>
+          </form>
+        </div>
+
+        <!-- 图表展示 -->
+        <div class="card chart-card">
+          <h2>历史价格波动</h2>
+          <canvas id="priceChart"></canvas>
+        </div>
+      </div>
+
+      <div id="results" class="results"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
